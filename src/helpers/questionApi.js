@@ -27,7 +27,7 @@ const convertQuestionsFromApi = (rawQuestions) => {
 const fetchQuestions = async (
   category = "18",
   difficulty = "easy",
-  amount = "1",
+  amount = "10",
   type = "multiple"
 ) => {
   try {

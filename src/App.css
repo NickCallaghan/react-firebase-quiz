@@ -36,6 +36,7 @@ h2 {
 
 .container {
   width: 100vw;
+  min-width: 350px;
   height: 100vh;
   display: flex;
   justify-content: center;
