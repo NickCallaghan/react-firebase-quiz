@@ -43,7 +43,7 @@ export default function HighScores() {
           );
         })}
       </ul>
-      <Link to="/game">
+      <Link to="/">
         <Button label="Go Back" />
       </Link>
     </div>

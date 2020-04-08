@@ -59,12 +59,22 @@ h2 {
 }
 
 .container .p-dropdown {
-  margin: 0.5em 1em;
-  width: 100%;
-  max-width: 400px;
+  margin: 1em 1em;
+  display: block;
 }
 
 /* FORMS */
+
+.game-options {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  width: 85%;
+  max-width: 400px;
+  padding: 2em 1.2em;
+  margin: 0 0 1.3em;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.05);
+}
+
 form {
   width: 100%;
   display: flex;

@@ -41,20 +41,21 @@ export default function Home() {
   return (
     <>
       <h1>React Quiz App</h1>
+      <div className="game-options">
+        <Dropdown
+          value={selectedCategory}
+          options={quizCategories}
+          onChange={(e) => setCategory(e)}
+          placeholder="Select a Category"
+        />
 
-      <Dropdown
-        value={selectedCategory}
-        options={quizCategories}
-        onChange={(e) => setCategory(e)}
-        placeholder="Select a Category"
-      />
-
-      <Dropdown
-        value={selectedDifficulty}
-        options={difficultyLevels}
-        onChange={(e) => setDifficulty(e)}
-        placeholder="Select a Difficulty"
-      />
+        <Dropdown
+          value={selectedDifficulty}
+          options={difficultyLevels}
+          onChange={(e) => setDifficulty(e)}
+          placeholder="Select a Difficulty"
+        />
+      </div>
 
       <Link to="/game">
         <Button label="Start Game" />
