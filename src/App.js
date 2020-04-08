@@ -3,6 +3,9 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Game from "./components/Game";
 import HighScores from "./components/HighScores";
+import "primereact/resources/themes/nova-light/theme.css";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
 import "./App.css";
 
 function App() {

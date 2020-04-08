@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useFirebase } from "./Firebase/FirebaseContext";
 import { Link } from "react-router-dom";
+import { Button } from "primereact/button";
 
 export default function HighScores() {
   const firebase = useFirebase();
@@ -42,8 +43,8 @@ export default function HighScores() {
           );
         })}
       </ul>
-      <Link to="/game" className="btn">
-        Start Quiz
+      <Link to="/game">
+        <Button label="Go Back" />
       </Link>
     </div>
   );

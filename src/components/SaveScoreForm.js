@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { InputText } from "primereact/inputtext";
+import { Button } from "primereact/button";
 import { useFirebase } from "./Firebase/FirebaseContext";
 
 export default function SaveScoreForm({ score, scoreSaved }) {
@@ -20,22 +22,18 @@ export default function SaveScoreForm({ score, scoreSaved }) {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Score: {score}</h1>
       <form onSubmit={(e) => handleSubmit(e)}>
-        <input
-          type="text"
-          name="username"
-          id="username"
+        <InputText
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Enter your name..."
         />
-        <button type="submit" className="btn" disabled={!username}>
-          Save High Score
-        </button>
+
+        <Button type="submit" disabled={!username} label="Save High Score" />
         <Link to="/" className="btn">
-          Go Home
+          <Button label="Go Home" className="p-button-secondary" />
         </Link>
       </form>
     </div>

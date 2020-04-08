@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useContext } from "react";
 import fetchQuestions from "../helpers/questionApi";
 import Question from "./Question";
 import HUD from "./HUD";
 import SaveScoreForm from "./SaveScoreForm";
+import { GameOptionsContext } from "../contexts/GameOptionsContext";
 
 export default function Game(props) {
   const [questions, setQuestions] = useState([]);
@@ -11,6 +12,10 @@ export default function Game(props) {
   const [score, setScore] = useState(0);
   const [questionsAnswered, setQuestionsAnswered] = useState(0);
   const [done, setDone] = useState(false);
+
+  // Game options to pass to the api when fetching quesitons
+  const { gameOptions } = useContext(GameOptionsContext);
+  const { selectedDifficulty, selectedCategory } = gameOptions;
 
   const changeQuestion = useCallback(
     (bonus = 0) => {
@@ -40,10 +45,10 @@ export default function Game(props) {
 
   // Fetch Questions and render to state on first mount
   useEffect(() => {
-    fetchQuestions()
+    fetchQuestions(selectedCategory, selectedDifficulty)
       .then((data) => setQuestions(data))
       .catch((err) => console.error(err));
-  }, []);
+  }, [selectedCategory, selectedDifficulty]);
 
   // Set the intial question if there are questions loaded but current question is set
   useEffect(() => {

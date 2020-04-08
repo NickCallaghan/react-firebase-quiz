@@ -7,7 +7,6 @@
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
-  color: #333;
 }
 
 body {
@@ -23,7 +22,7 @@ h4 {
 
 h1 {
   font-size: 5.4rem;
-  color: #56a5eb;
+  color: #007ad9;
   margin-bottom: 5rem;
 }
 
@@ -52,30 +51,15 @@ h2 {
   width: 100%;
 }
 
-/* BUTTONS */
-.btn {
-  font-size: 1.8rem;
-  padding: 1rem 0;
-  width: 20rem;
-  text-align: center;
-  border: 0.1rem solid #56a5eb;
-  margin-bottom: 1rem;
-  text-decoration: none;
-  color: #56a5eb;
-  background-color: white;
+/* BUTTONS + CONTROLS*/
+
+.container .p-button {
+  margin: 0.5em 1em;
 }
 
-.btn:hover {
-  cursor: pointer;
-  box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
-  transform: translateY(-0.1rem);
-  transition: transform 150ms;
-}
-
-.btn[disabled]:hover {
-  cursor: not-allowed;
-  box-shadow: none;
-  transform: none;
+.container .p-dropdown {
+  margin: 0.5em 1em;
+  max-width: 300px;
 }
 
 /* FORMS */

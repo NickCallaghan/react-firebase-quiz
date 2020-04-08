@@ -6,13 +6,16 @@ import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
 import Firebase from "./components/Firebase/Firebase";
 import { FirebaseContext } from "./components/Firebase/FirebaseContext";
+import GameOptionsProvider from "./contexts/GameOptionsContext";
 
 ReactDOM.render(
   <React.StrictMode>
     <FirebaseContext.Provider value={new Firebase()}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <GameOptionsProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </GameOptionsProvider>
     </FirebaseContext.Provider>
   </React.StrictMode>,
   document.getElementById("root")

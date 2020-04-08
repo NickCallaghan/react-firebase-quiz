@@ -25,13 +25,14 @@ const convertQuestionsFromApi = (rawQuestions) => {
 
 // Fetch questions from the api and retruns them formatted correctly
 const fetchQuestions = async (
-  amount = "10",
   category = "18",
+  difficulty = "easy",
+  amount = "1",
   type = "multiple"
 ) => {
   try {
     //Get questions form the api
-    const url = `https://opentdb.com/api.php?amount=${amount}&category=${category}&type=${type}`;
+    const url = `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=${type}`;
     const response = await axios.get(url);
     const rawQuestions = await response.data.results;
     //Convert Response to the required format
