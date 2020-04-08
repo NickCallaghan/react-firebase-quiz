@@ -60,7 +60,8 @@ h2 {
 
 .container .p-dropdown {
   margin: 0.5em 1em;
-  max-width: 300px;
+  width: 100%;
+  max-width: 400px;
 }
 
 /* FORMS */
