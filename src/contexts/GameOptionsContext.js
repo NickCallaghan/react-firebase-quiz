@@ -1,8 +1,8 @@
 import React, { createContext, useState } from "react";
 
 const initalValue = {
-  selectedDifficulty: "easy",
-  selectedCategory: 9,
+  selectedDifficulty: null,
+  selectedCategory: null,
 };
 
 export const GameOptionsContext = createContext();

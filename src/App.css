@@ -21,7 +21,7 @@ h4 {
 }
 
 h1 {
-  font-size: 5.4rem;
+  font-size: 4rem;
   color: #007ad9;
   margin-bottom: 5rem;
 }
@@ -67,12 +67,19 @@ h2 {
 
 .game-options {
   border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgb(232, 240, 250);
   border-radius: 15px;
   width: 85%;
   max-width: 400px;
   padding: 2em 1.2em;
   margin: 0 0 1.3em;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.05);
+}
+
+.game-options .game-options-heading {
+  font-size: 2em;
+  text-transform: uppercase;
+  color: #378fd2;
 }
 
 form {

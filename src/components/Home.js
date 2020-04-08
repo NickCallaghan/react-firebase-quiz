@@ -12,7 +12,7 @@ export default function Home() {
     { value: "easy", label: "Easy" },
     { value: "medium", label: "Medium" },
     { value: "hard", label: "Hard" },
-    { value: "", label: "Any Difficulty" },
+    { value: "any", label: "Any Difficulty" },
   ];
 
   const quizCategories = [
@@ -42,6 +42,7 @@ export default function Home() {
     <>
       <h1>React Quiz App</h1>
       <div className="game-options">
+        <h2 className="game-options-heading">Choose Quiz Settings</h2>
         <Dropdown
           value={selectedCategory}
           options={quizCategories}
