@@ -31,6 +31,8 @@ const fetchQuestions = async (
   type = "multiple"
 ) => {
   try {
+    //diffculty of any needs to be passed to the api as an empty string but this is not ideal to for the dropdown
+    difficulty = difficulty === "any" ? "" : difficulty;
     //Get questions form the api
     const url = `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=${type}`;
     const response = await axios.get(url);
