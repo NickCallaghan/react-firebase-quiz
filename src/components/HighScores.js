@@ -38,7 +38,8 @@ export default function HighScores() {
         {scores.map((record) => {
           return (
             <li key={record.id} className="high-score">
-              {record.username} - {record.score}
+              <div className="high-score-name">{record.username}</div>
+              <div className="high-score-score">{record.score}</div>
             </li>
           );
         })}
