@@ -4,7 +4,7 @@ import { GameOptionsContext } from "../contexts/GameOptionsContext";
 import { Button } from "primereact/button";
 import { Dropdown } from "primereact/dropdown";
 
-export default function Home() {
+export default function Home(props) {
   const { gameOptions, setGameOptions } = useContext(GameOptionsContext);
   const { selectedDifficulty, selectedCategory } = gameOptions;
 
@@ -38,8 +38,16 @@ export default function Home() {
     setGameOptions(updatedOptions);
   };
 
+  const handleHighScore = () => {
+    props.history.push("/high-scores");
+  };
+
+  const handleStartGame = () => {
+    props.history.push("/game");
+  };
+
   return (
-    <>
+    <div className="container">
       <h1>React Quiz App</h1>
       <div className="game-options">
         <h2 className="game-options-heading">Choose Quiz Settings</h2>
@@ -58,12 +66,17 @@ export default function Home() {
         />
       </div>
 
-      <Link to="/game">
-        <Button label="Start Game" />
-      </Link>
-      <Link to="/high-scores">
-        <Button label="View High Scores" className="p-button-secondary" />
-      </Link>
-    </>
+      <Button
+        label="Start Game"
+        onClick={handleStartGame}
+        disabled={!selectedDifficulty || !selectedCategory}
+      />
+
+      <Button
+        label="View High Scores"
+        className="p-button-secondary"
+        onClick={handleHighScore}
+      />
+    </div>
   );
 }
