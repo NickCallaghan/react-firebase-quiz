@@ -4,6 +4,7 @@ import Question from "./Question";
 import HUD from "./HUD";
 import SaveScoreForm from "./SaveScoreForm";
 import { GameOptionsContext } from "../contexts/GameOptionsContext";
+import { Redirect } from "react-router-dom";
 
 export default function Game(props) {
   const [questions, setQuestions] = useState([]);
@@ -57,9 +58,13 @@ export default function Game(props) {
     }
   });
 
-  if (loading && !done) return <div id="loader" />; // Show the loader only while quiz is loading
   return (
     <>
+      {/* Redirect to homepage if game options are not set */}
+      {!selectedDifficulty || !selectedCategory ? <Redirect to="/" /> : null}
+      {/* Show Loader while fetching questions */}
+      {loading && !done && <div id="loader" />}
+      {/* Render game when loading complete */}
       {!done && !loading && currentQuestion && (
         <div>
           <HUD score={score} questionsAnswered={questionsAnswered} />

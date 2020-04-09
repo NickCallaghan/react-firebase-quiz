@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import { GameOptionsContext } from "../contexts/GameOptionsContext";
 import { Button } from "primereact/button";
 import { Dropdown } from "primereact/dropdown";
